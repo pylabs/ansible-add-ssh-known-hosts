@@ -1,17 +1,23 @@
 #!/bin/bash
 
 
-if [ ! -e ~/.ssh ]; then
-    mkdir -m 0700 ~/.ssh
+if [ "$1" == "root" ]; then
+    home_dir="/root"
+else
+    home_dir="/home/$i"
 fi
 
-if [ ! -e ~/.ssh/known_hosts ]; then
-    touch ~/.ssh/known_hosts
-    chmod 0600 ~/.ssh/known_hosts
+if [ ! -e $home_dir/.ssh ]; then
+    mkdir -m 0700 $home_dir/.ssh
+fi
+
+if [ ! -e $home_dir/.ssh/known_hosts ]; then
+    touch $home_dir/.ssh/known_hosts
+    chmod 0600 $home_dir/.ssh/known_hosts
 fi
 
 for i in $@; do
-    if ! grep $i ~/.ssh/known_hosts > /dev/null; then
-        ssh-keyscan $i >> ~/.ssh/known_hosts
+    if ! grep $i $home_dir/.ssh/known_hosts > /dev/null; then
+        ssh-keyscan $i >> $home_dir/.ssh/known_hosts
     fi
 done

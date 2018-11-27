@@ -6,6 +6,8 @@ Scan ssh keys and save to known_hosts.
 Role Variables
 --------------
 
+If you do not speficy `add_ssh_knwon_hosts`, then this role will add github.com and bitbucket.org to known_host file.
+
 ```yaml
 add_ssh_known_hosts:
   - DOMAIN_NAME_1
