@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-if [ "$1" == "root" ]; then
+if [ "$1" == "root" -o "$1" == "" ]; then
     home_dir="/root"
 else
     home_dir="/home/$i"
