@@ -1,5 +1,6 @@
 galaxy_info:
-  author: add_ssh_known_hosts
+  role_name: add_ssh_known_hosts
+  author: William Wu
   description: Scan ssh keys and save to known_hosts
   company: PyLabs
   license: MIT
