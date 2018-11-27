@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-if [ "$1" == "root" -o "$1" == "" ]; then
+if [ "$2" == "root" -o "$2" == "" ]; then
     home_dir="/root"
 else
     home_dir="/home/$i"
@@ -16,8 +16,6 @@ if [ ! -e $home_dir/.ssh/known_hosts ]; then
     chmod 0600 $home_dir/.ssh/known_hosts
 fi
 
-for i in $@; do
-    if ! grep $i $home_dir/.ssh/known_hosts > /dev/null; then
-        ssh-keyscan $i >> $home_dir/.ssh/known_hosts
-    fi
-done
+if ! grep $1 $home_dir/.ssh/known_hosts > /dev/null; then
+    ssh-keyscan $1 >> $home_dir/.ssh/known_hosts
+fi

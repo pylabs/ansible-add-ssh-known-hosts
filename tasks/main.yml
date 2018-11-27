@@ -2,7 +2,7 @@
 - name: add ssh known hosts
   block:
     - name: add ssh known hosts
-      script: "add_ssh_known_hosts.sh {{ item }}"
-      loop: "{{ add_ssh_known_hosts }}"
+      script: "add_ssh_known_hosts.sh {{ item.0 }} {{ item.1 }}"
+      loop: "{{ query('nested', add_ssh_known_hosts, add_ssh_known_hosts_accounts) }}"
   tags:
     - add_ssh_known_hosts

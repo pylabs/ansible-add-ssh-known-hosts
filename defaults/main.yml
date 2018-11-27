@@ -1,4 +1,6 @@
 ---
+add_ssh_known_hosts_accounts:
+  - "root"
 add_ssh_known_hosts:
   - "github.com"
   - "bitbucket.org"
