@@ -8,8 +8,8 @@ galaxy_info:
   platforms:
   - name: Debian
     versions:
-    - Stretch
-    - 9
+    - Buster
+    - 10
   galaxy_tags:
     - debian
     - ssh
