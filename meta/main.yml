@@ -4,7 +4,7 @@ galaxy_info:
   description: Scan ssh keys and save to known_hosts
   company: PyLabs
   license: MIT
-  min_ansible_version: 2.0
+  min_ansible_version: 2.11
   platforms:
   - name: Debian
     versions:
